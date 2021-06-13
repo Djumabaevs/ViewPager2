@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
+import com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
 
 private const val NUM_PAGES = 5
 
@@ -33,6 +35,9 @@ class ScreenSlidePagerActivity : FragmentActivity() {
 
         val viewPager: ViewPager2 = findViewById(R.id.pager)
         viewPager.setPageTransformer(ZoomOutPageTransformer())
+
+        val dotsIndicator = findViewById<DotsIndicator>(R.id.dots_indicator)
+        dotsIndicator.setViewPager2(viewPager)
     }
 
     override fun onBackPressed() {
